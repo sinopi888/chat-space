@@ -18,6 +18,8 @@
 
 
 ### Association
+- has_many :user_groups
+- has_many :messages
 - has_many :groups. through: :user_groups
 
 ## groupテーブル
@@ -27,6 +29,8 @@
 |name|string|null: false|
 
 ### Association
+- has_many :user_groups
+- has_many :messages
 - has_many :users, through: :user_groups
 
 ## messageテーブル

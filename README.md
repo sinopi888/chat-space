@@ -14,29 +14,26 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|references|null: false, foreign_key: true|
+|name|string|null: false|
 
 
 ### Association
-- has_many :user_group
-- has_many :messages
+- has_many :groups. through: :user_groups
 
-##groupテーブル
+## groupテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|group|references|null: false, foreign_key: true|
-|name|references|null: false, foreign_key: true|
+|name|string|null: false|
 
 ### Association
-- has_many :user_group
-- has_many :messages
+- has_many :users, through: :user_groups
 
-##messageテーブル
+## messageテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|name|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 |group|references|null: false, foreign_key: true|
 |body|text|
 |image|string|

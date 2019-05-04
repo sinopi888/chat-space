@@ -14,12 +14,11 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user|references|null: false, foreign_key: true|
 |name|references|null: false, foreign_key: true|
 
 
 ### Association
-- has_many :members
+- has_many :user_group
 - has_many :messages
 
 ##groupテーブル
@@ -30,14 +29,14 @@
 |name|references|null: false, foreign_key: true|
 
 ### Association
-- has_many :members
+- has_many :user_group
 - has_many :messages
 
 ##messageテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user|references|null: false, foreign_key: true|
+|name|references|null: false, foreign_key: true|
 |group|references|null: false, foreign_key: true|
 |body|text|
 |image|string|

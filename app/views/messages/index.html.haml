@@ -17,42 +17,16 @@
         .right-header__button
           Edit
     .messages
-      .message
-        .upper-message
-          .upper-message__user-name
-            hirano
-          .upper-message__date
-            2019/05/04(Sat) 19:05:08
-        .lower-message
-          .lower-message__content
-            こんばんは！
-      .message
-        .upper-message
-          .upper-message__user-name
-            sinopi
-          .upper-message__date
-            2019/05/04(Sat) 19:05:13
-        .lower-message
-          .lower-message__content
-            知ってる平野ですか
-      .message
-        .upper-message
-          .upper-message__user-name
-            hirano
-          .upper-message__date
-            2019/05/04(Sat) 19:06:34
-        .lower-message
-          .lower-message__content
-            そうです。平野です。
-    .form
-      %form
-        %input.form__message
+      = render @messages
+   .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
         .form__mask
-          %label.form__mask__image
+          = f.label :image, class: 'form__mask__image' do
             = fa_icon 'picture-o', class: 'icon'
-            %input.hidden{type: 'file'}
-        %input.form__submit{type: 'submit', value: 'Send'}
-    
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
+
 
 
 

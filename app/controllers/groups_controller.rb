@@ -15,6 +15,7 @@ class GroupsController < ApplicationController
     else
       render :new
     end
+  end
 
 
   def update

@@ -1,5 +1,9 @@
 .chat {
   width: calc(100% - 300px);
+  img {
+    height: 183px;
+    width: 275px;
+  }
   .header {
     box-sizing: border-box;
     height: 100px;
@@ -62,8 +66,8 @@
         &__content {
           color: $black;
           font-size: 14px;
-          margin-bottom: 40px;
         }
+        
       }
     }
   }

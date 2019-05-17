@@ -1,3 +1,4 @@
+$(function(){
 function buildHTML(message){
   if ( message.image ) {
     var html =
@@ -61,4 +62,5 @@ $('.js-form').on('submit', function(){
       alert('error');
     });
     return false;
+  });
 });

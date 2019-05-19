@@ -1,12 +1,7 @@
 <div class='chat-group-form'>
   <h1>チャットグループ編集</h1>
   <form class="edit_chat_group" id="edit_chat_group_22" action="/chat_groups/22" accept-charset="UTF-8" method="post">
-    <div class="chat-group-form__errors">
-      <h2>1件のエラーが発生しました。
-      <ul>
-        <li>エラーです</li>
-      </ul>
-    </div>
+  
     <div class='chat-group-form__field clearfix'>
       <div class='chat-group-form__field--left'>
         <label class="chat-group-form__label" for="chat_group_name">グループ名</label>
@@ -16,13 +11,12 @@
       </div>
     </div>
     <div class='chat-group-form__field clearfix'>
-      <!-- この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します  -->
-      <!-- <div class='chat-group-form__field--left'>
+     <div class='chat-group-form__field--left'>
         <label class="chat-group-form__label" for="chat_group_チャットメンバーを追加">チャットメンバーを追加</label>
       </div>
       <div class='chat-group-form__field--right'>
         <div class='chat-group-form__search clearfix'>
-          <input class='chat-group-form__input' id='user-search-field' placeholder='追加したいユーザー名を入力してください' type='text'>
+          <input class='chat-group-form__input' id='user-search-field' placeholder='追加したいユーザー名を入力してください' type='text' name='text'>
         </div>
         <div id='user-search-result'></div>
       </div> -->

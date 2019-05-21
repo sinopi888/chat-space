@@ -1,4 +1,3 @@
-
 $(function(){
   function buildHTML(message){
     if ( message.image ) {
@@ -28,7 +27,6 @@ $(function(){
   e.preventDefault();
   var formData = new FormData(this);
   var url = $(this).attr('action');
-  console.log(url)
 
   $.ajax({
     url: url,
@@ -45,7 +43,6 @@ $(function(){
     $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');   
     $('form')[0].reset();
   })
-
     .fail(function(){
       alert('error');
     });

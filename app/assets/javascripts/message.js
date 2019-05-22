@@ -1,6 +1,6 @@
 $(function(){
   function buildHTML(message){
-    if ( message.content && message.image.url ) { 
+    var Image = message.image ? `<img src=${message.image.url}>` : ``
       var html =
         `<div class="message" data-message-id=${message.id}>
         <div class="upper-message">
@@ -16,41 +16,8 @@ $(function(){
             ${message.content}
           </p>
         </div>
-        <img src=${message.image.url} >
+        ${Image}
       </div>`
-  } else if (message.content) {
-    var html =
-    `<div class="message" data-message-id=${message.id}>
-        <div class="upper-message">
-          <div class="upper-message__user-name">
-            ${message.user_name}
-          </div>
-          <div class="upper-message__date">
-            ${message.date}
-          </div>
-        </div>
-        <div class="lower-message">
-          <p class="lower-message__content">
-            ${message.content}
-          </p>
-        </div>
-      </div>`
-    } else if (message.image.url){
-      var html =
-        `<div class="message" data-message-id=${message.id}>
-        <div class="upper-message">
-          <div class="upper-message__user-name">
-            ${message.user_name}
-          </div>
-          <div class="upper-message__date">
-            ${message.date}
-          </div>
-        </div>
-        <div class="lower-message">
-          <img src=${message.image.url}>
-        </div>
-      </div>`
-    };
     return html;
   };
 
@@ -109,5 +76,5 @@ $(function(){
   };
   
  
-  setInterval(reloadMessages, 5000);
+  setInterval(reloadMessages, 2000);
 });

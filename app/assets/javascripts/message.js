@@ -75,6 +75,12 @@ $(function(){
       });
   };
   
- 
-  setInterval(reloadMessages, 2000);
+  $(function(){
+    if (location.pathname.match(/messages/)){
+      setInterval(reloadMessages, 5000);
+    } else {
+      clearInterval(reloadMessages)
+    }
+  })
+
 });

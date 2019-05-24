@@ -28,8 +28,10 @@
         - @group.users.each do |user|
           .chat-group-user.clearfix{ id: "chat-group-user-#{user.id}" }
             = f.hidden_field :member, name: 'group[user_ids][]', value: "#{user.id}"
-            %p.chat-group-user__name= user.name
-            = content_tag :a, '削除', class: 'user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'
+            %p.chat-group-user__name
+              = user.name
+            - if current_user.id != user.id
+              = content_tag :a, '削除', class: 'user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'
 
   .chat-group-form__field.clearfix
     .chat-group-form__field--left

@@ -32,10 +32,15 @@ $(function(){
       })
 
       .done(function(users) {
-        users.forEach(function(user) {
-          var html_add = buildHTML_add(user);
-          $('#user-search-result').append(html_add);
-          });
+        $("#user-search-result").empty();
+        if ( input.length !== 0 && users.length !== 0 ){
+          users.forEach(function(user) {
+            var html_add = buildHTML_add(user);
+            $('#user-search-result').append(html_add);
+            });
+          } else { 
+            $('#user-search-result').append("一致するユーザーはいません")
+          };
         })
 
       .fail(function(){
